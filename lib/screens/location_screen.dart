@@ -44,8 +44,8 @@ class LocationScreenState extends State<LocationScreen> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: _loaded == true
-                    ? networkImageProvider
-                    : asset,
+                    ? asset
+                    : networkImageProvider,
 
                  //image: AssetImage('images/location_background.jpg'),
                 // image: const NetworkImage(
