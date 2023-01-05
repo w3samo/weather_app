@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:weather_app/screens/city_screen.dart';
+import 'package:weather_app/screens/loading_screen.dart';
 
 import '../utilities/constants.dart';
 
@@ -77,7 +79,11 @@ class LocationScreenState extends State<LocationScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LoadingScreen() ),
+                        );                      },
                       child: const Icon(
                         Icons.near_me,
                         size: 50.0,
@@ -86,6 +92,10 @@ class LocationScreenState extends State<LocationScreen> {
                     ),
                     TextButton(
                       onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const CityScreen()),
+                        );
                       },
                       child: const Icon(
                         Icons.location_city,
